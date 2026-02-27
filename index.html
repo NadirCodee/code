@@ -1,209 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links Social media 3D</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
-*{
-  font-family: "Outfit", sans-serif;
-}
-
-body{
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  height: 98vh;
-  background-color: beige;
-}
-
-.youtube{
-  font-size: 50px;
-  color: white;
-  background-color: #ff0000;
-  border: solid 3px black;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  box-shadow: 2px 3px 0px black;
-  margin-right: 25px;
-   transition: 0.2s
-}
-
-.facebook{
-  font-size: 50px;
-  color: white;
-  background-color: #0800ff;
-  border: solid 3px black;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  box-shadow: 2px 3px 0px black;
-  margin-right: 25px;
-  transition: 0.2s
-}
-
-.instagram{
-  font-size: 50px;
-  color: white;
-  border: solid 3px black;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  box-shadow: 2px 3px 0px #000000;
-  margin-right: 25px;
-  background-color: #ff0084;
-  transition: 0.2s
-}
-
-.whatsapp{
-  font-size: 50px;
-  color: white;
-  background-color: #00ff15;
-  border: solid 3px black;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  box-shadow: 2px 3px 0px #000000;
-  margin-right: 25px;
-  transition: 0.2s
-}
-.x{
-  font-size: 50px;
-  color: white;
-  background-color: #00e5ff;
-  border: solid 3px black;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  border-radius: 50%;
-  box-shadow: 2px 3px 0px #000000;
-  margin-right: 25px;
-  transition: 0.2s
-}
-
-.youtube:active{
-  translate: 0 5px;
-  box-shadow: 0 0 0;
-}
-.facebook:active{
-  translate: 0 5px;
-  box-shadow: 0 0 0;
-}
-.instagram:active{
-  translate: 0 5px;
-  box-shadow: 0 0 0;
-}
-.whatsapp:active{
-  translate: 0 5px;
-  box-shadow: 0 0 0;
-}
-.x:active{
-  translate: 0 5px;
-  box-shadow: 0 0 0;
-}
-.youtube:hover{
-  width: 200px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: left;
-  padding-left: 10px;
-  transition: 0.2s;
-}
-.youtube:hover::after{
-  content: 'Youtube';
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 15px;
-}
-.facebook:hover{
-  width: 200px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: left;
-  padding-left: 10px;
-  transition: 0.2s;
-}
-.facebook:hover::after{
-  content: 'FaceBook';
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 7px;
-}
-.instagram:hover{
-  width: 200px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: left;
-  padding-left: 10px;
-  transition: 0.2s;
-}
-.instagram:hover::after{
-  content: 'Instgram';
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
-}
-.whatsapp:hover{
-  width: 200px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: left;
-  padding-left: 10px;
-  transition: 0.2s;
-}
-.whatsapp:hover::after{
-  content: 'WhatsApp';
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 1px;
-}
-.x:hover{
-  width: 200px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: left;
-  padding-left: 10px;
-  transition: 0.2s;
-}
-.x:hover::after{
-  content: 'Twitter';
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 15px;
-}
-a{
-  transition: 0.3s;
-}
-    </style>
+    <title>Like / Dislike Buttons</title>
 </head>
+
 <body>
-    <a class="youtube" href="#"><i class='bx bxl-youtube'></i></a>
-    <a class="facebook" href="#"><i class='bx bxl-facebook'></i></a>
-    <a class="instagram" href="#"><i class='bx bxl-instagram'></i></a>
-    <a class="whatsapp" href="#"><i class='bx bxl-whatsapp'></i></a>
-    <a class="x" href="#"><i class='bx bxl-twitter'></i></a>
+    <div class="container">
+        <div class="like-box">
+            <button><i class="fa-regular fa-thumbs-up"></i>
+                <span>100K</span>
+            </button>
+
+        </div>
+        <hr>
+        <div class="dislike-box">
+            <button><i class="fa-regular fa-thumbs-down"></i>
+                <span>458</span>
+            </button>
+
+        </div>
+    </div>
 </body>
+
 </html>
