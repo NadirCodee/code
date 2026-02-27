@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immitating ChatGPT login page!</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Calculator</title>
 </head>
 <body>
-    <div class="content">
-        <h1>
-Dites-nous-en un peu
-plus sur vous
-</h1>
-<div class="input-box1">
-    <label>Nom complet</label>
-<input type="text" required>
-</div>
-<div class="input-box1">
-    <label>Date de naissance</label>
-    <input type="text" required>
-</div>
-<p>
-En cliquant sur "Continuer", vous confirmez que
-vous acceptez nos <a href="#">conditions d’utilisation</a> et que
-vous avez pris connaissance de notre <span>politique
-de confidentialité.</span>
-</p>
-<button>Continuer</button>
+    <div class="calculator">
+        <div class="result">
+            <span>0</span>
+        </div>
+        <div class="numbers">
+            <button class="clear">C</button>
+            <button class="calculation">%</button>
+            <button class="calculation">
+                <i class='bx bxs-tag-x' ></i>
+            </button>
+            <button class="calculation">÷</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="calculation">
+                <i class='bx bx-x' ></i>
+            </button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="calculation">-</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="calculation">
+                <i class='bx bx-plus' ></i>
+            </button>
+            <button class="calculation">
+                <i class='bx bx-list-plus' ></i>
+            </button>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button class="equal">=</button>
+        </div>
     </div>
 </body>
 </html>
