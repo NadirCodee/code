@@ -1,99 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Quicksand:wght@300..700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 body{
-    height: 100vh;
-    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right bottom,#514B4E,#949393);
+    display: flex;
     justify-content: center;
-    background-color: black;
+    align-items: center;
+}
+.container{
+    background-color: #fff;
+    padding: 35px 20px;
     display: flex;
+    flex-direction: column;
 }
-.calculator{
-    width: 450px;
-    padding: 30px;
-    background-color: black;
-    border-radius: 25px;
-    border: solid 1px hsl(0, 0%, 40%);
-    box-shadow: 20px 0 100px hsl(0, 0%, 40%);
+.container h1{
+    color: #3B372D;
+    font-family: 'Merriweather',sans-serif;
+    font-weight: 400;
+    pointer-events: none;
 }
-.result{
-    width: 100%;
-    height: 90px;
-    margin: 0 0 15px 0;
-    justify-content: flex-end;
+.container .input-box{
     display: flex;
-    background-color: hsl(0, 0%, 10%);
-    border-radius: 20px;
+    flex-direction: column;
+    gap: 20px;
+    margin: 25px 0;
 }
-.result span{
-    font-size: 70px;
-    color: #FFF;
+.container .input-box input{
+    font-size: 17px;
+    transition: 0.3s;
+    padding: 7px 13px;
+    outline: none;
+    font-family: 'Quicksand',sans-serif;
+    border: solid 1px hsl(0, 0%, 50%);
 }
-.numbers{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    row-gap: 12px;
+.input-box input::placeholder{
+    font-weight: 500;
 }
-.numbers button{
-    font-size: 25px;
-    padding: 25px;
-    border-radius: 20px;
+.input-box input:focus{
+    border: solid 1px black;
+}
+.show-more a{
+    font-family: 'Quicksand',sans-serif;
+    text-decoration: none;
+    color: #0077ff;
+}
+.show-more a:hover{
+    text-decoration: underline;
+}
+textarea{
+    outline: none;
+    resize: none;
+    min-width: 100%;
+    font-family: 'Quicksand',sans-serif;
+    font-size: 17px;
+    margin: 15px 0;
+    padding: 15px;
+    height: 170px;
+}
+.captcha-box{
+    min-width: 100%;
+    font-family: 'Quicksand',sans-serif;
+}
+.captcha-box a{
+    text-decoration: none;
+    color: #008cff;
+}
+.captcha-box a:hover{
+    text-decoration: underline;
+}
+.send-btn{
+    display: flex;
+    margin: 30px 0 15px 0;
+    font-size: 20px;
+    padding: 10px 25px;
+    width: 300px;
+    text-transform: uppercase;
+    justify-content: center;
+    font-weight: 400;
+    font-family: 'Quicksand',sans-serif;
     border: none;
-    width: 100px;
-    background-color: transparent;
+    border-radius: 8px;
+    letter-spacing: 2px;
     cursor: pointer;
-    transition: 0.1s;
-}
-.numbers .clear{
-    color: red;
-    font-weight: 600;
-}
-.numbers .clear:hover{
-    transition: 0.1s;
-    background-color: #ff000057;
-}
-.numbers .calculation{
-    color: rgb(0, 255, 0);
-    font-weight: bold;
-}
-.numbers .calculation:hover{
-    transition: 0.1s;
-    background-color: #00ff0047;
-}
-.numbers .number{
-    color: #fff;
-    font-weight: 600;
-}
-.numbers .number:hover{
-    transition: 0.1s;
-    background-color: hsl(0, 0%,10%);
-}
-.numbers .equal{
-    background-color: #1aff00;
     color: white;
+
+    background-image: linear-gradient(to right,
+    #BEB08E,
+    #beb080,
+    #B5A57F,
+    #e1ca95,
+    #9b8b36,
+    #8f8162);
+
+    background-size: 300% 100%;
+    background-position: left;
+
+    transition: background-position 0.5s ease;
 }
-.numbers .equal:hover{
-    background-color: hsl(114, 100%, 72%);
+
+.send-btn:hover{
+    background-position: right;
 }
-::selection{
-    background-color: hsl(0, 0%, 50%);
-    color: #ffffff;
-}
-@media (max-width: 768px){
-    .calculator{
-        width: 85%;
-    }
-    .numbers .equal{
-        background-color: #ff02ff;
-    }
-    .numbers .calculation{
-        color: #ff02ff;
-    }
-}
-@media (max-width:600px){
-    .calculator{
-        width: 95%;
+@media (max-width:748px){
+    .container{
+        max-width: 90%;
+        margin: 0 auto;
     }
 }
