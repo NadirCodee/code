@@ -1,27 +1,1459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Project By (Nadir)</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASKETBALL</title>
 </head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap");
+
+    /* ============    Google font Used!    ============ */
+    /* "Racing Sans One", "Oxanium", "Playball", "Poppins" */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #2a0d00;
+    }
+
+    html,
+    body {
+        scroll-behavior: smooth;
+        min-height: 100vh;
+    }
+
+    .header {
+        backdrop-filter: blur(1000px);
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 35px;
+        align-items: center;
+        width: 100%;
+        z-index: 999;
+        position: fixed;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .header::selection {
+        background-color: #ff5900;
+        color: black;
+    }
+
+    .logo a {
+        text-decoration: none;
+    }
+
+    .logo a i {
+        color: #ff8400;
+        font-size: 30px;
+        border-radius: 50%;
+        transform: rotate(0deg);
+        animation: icon infinite linear 3s;
+        transition: 0.3s;
+    }
+
+    .logo a span {
+        color: #ff8400;
+        font-family: "Racing Sans One", sans-serif;
+        text-decoration: none;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .search-box {
+        width: 350px;
+        height: 50px;
+        align-items: center;
+        display: flex;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .search-box .search-input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        font-family: "Oxanium", sans-serif;
+        background-color: transparent;
+        border: solid 2px #ff8400;
+        padding: 0 67px 0 15px;
+        font-size: 17px;
+        outline: none;
+        color: #fff;
+        border-radius: 90px;
+    }
+
+    .search-box button {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 34px;
+        border: none;
+        border-radius: 90px;
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: transparent;
+        backdrop-filter: blur(1000px);
+        color: #ff8400;
+        border: solid 2px #ff8400;
+    }
+
+    .search-box button:hover {
+        color: black;
+        background-color: #ff8400;
+    }
+
+    .search-box input::placeholder {
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    .navbar {
+        display: flex;
+        gap: 15px;
+    }
+
+    .navbar .link {
+        color: #fff;
+        text-decoration: none;
+        font-family: "Oxanium", "Segoe UI", sans-serif;
+        padding: 7px 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .link::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ff8400;
+        top: 0;
+        left: 0;
+        transition: 0.3s;
+        z-index: -1;
+        border-radius: 5px;
+        transform: translateY(55px);
+    }
+
+    .navbar .link:hover::after {
+        transform: translateY(0);
+    }
+
+    .navbar .link:hover {
+        color: black;
+    }
+
+    .navbar .active {
+        text-decoration: none;
+        color: white;
+        padding: 9px 15px;
+        font-family: "Oxanium", "Segoe UI", sans-serif;
+        border-radius: 90px 90px 90px 0px;
+        border: solid 2px #ff8400;
+        position: relative;
+        transition: 0.3s;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .navbar .active:hover {
+        color: black;
+        border-radius: 90px 90px 0px 90px;
+    }
+
+    .navbar .active::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ff8400;
+        border-radius: 90px 90px 0px 90px;
+        top: 0;
+        left: 0;
+        transform: translateX(120px);
+        pointer-events: none;
+        z-index: -1;
+        transition: 0.3s;
+    }
+
+    .navbar .active:hover::after {
+        transform: translateX(0);
+    }
+
+    @keyframes icon {
+        from {
+            transform: rotate(180deg);
+        }
+
+        to {
+            transform: 0deg;
+        }
+    }
+
+    @keyframes skullicon {
+        0% {
+            opacity: 1;
+        }
+
+        20% {
+            opacity: 0.9;
+        }
+
+        30% {
+            opacity: 0.91;
+        }
+
+        40% {
+            opacity: 0.1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+
+        60% {
+            opacity: 0.1;
+        }
+
+        70% {
+            opacity: 0.5;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        90% {
+            opacity: 0.2;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .skills-section {
+        background-image: linear-gradient(to bottom, #2a0d00, #b00000);
+        min-height: 100vh;
+        color: white;
+    }
+
+    .skills-section .text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 35px;
+    }
+
+    .text-box h1 {
+        color: #cccccc;
+        font-family: "Oxanium", "Segoe UI", sans-serif;
+        font-size: 70px;
+        margin-top: 50px;
+    }
+
+    .text-box .span-skills {
+        font-family: "Racing Sans One", "Segoe UI", sans-serif;
+        color: #ff8400;
+    }
+
+    .text-box p {
+        font-family: "Playball", sans-serif;
+        font-size: 35px;
+        margin-top: 50px;
+        line-height: 70px;
+        word-spacing: 2px;
+    }
+
+    .text-box p .active-span {
+        position: relative;
+    }
+
+    .text-box p .active-span::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 3px;
+        background-image: linear-gradient(to right, #ff5900, #ff8400);
+        border-radius: 50px;
+        bottom: 0;
+        left: 0;
+    }
+
+    .text-box h1 i {
+        color: #cccccc;
+        animation: skullicon infinite linear 3s;
+    }
+
+    .text-box::selection {
+        background-color: #ff5900;
+        color: black;
+    }
+
+    .card-container {
+        padding: 25px 35px;
+        display: flex;
+        margin-top: 40px;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card-container .card {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 15px 25px;
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        border-radius: 10px;
+        border: solid 3px #00a1a7;
+        transition: 0.3s;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    .card-container .card:hover {
+        transform: scale(1.04);
+        border: solid 3px #00f7ff;
+        box-shadow: 0 0 20px #00f7ff;
+    }
+
+    .card-container .card:hover i {
+        color: #ff5900;
+    }
+
+    .card-container .card i {
+        font-size: 45px;
+        transition: 0.3s;
+    }
+
+    .card-container .card h2 {
+        font-size: 24px;
+        pointer-events: none;
+        position: relative;
+    }
+
+    .card h2::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: #ffbb00;
+        border-radius: 60px;
+        bottom: -13px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s;
+    }
+
+    .card:hover h2::before {
+        transform: scaleX(1);
+    }
+
+    .animated-span {
+        position: relative;
+    }
+
+    .animated-span::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: red;
+        bottom: -4px;
+        left: 0;
+        border-radius: 50px;
+        transform: scaleX(0);
+        transition: 0.4s ease-in-out;
+        transform-origin: left;
+    }
+
+    .card:hover .animated-span::after {
+        transform: scaleX(1);
+    }
+
+    .card-container .card p {
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .card::selection {
+        background-color: red;
+        color: black;
+    }
+
+    .about-section::selection {
+        background-color: yellow;
+        color: black;
+    }
+
+    .about-section {
+        min-height: 100vh;
+        background-image: linear-gradient(to bottom, #b00000, #d00068);
+        display: flex;
+        align-items: center;
+        padding: 0 35px;
+        gap: 30px;
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text h1 {
+        font-size: 55px;
+        font-family: "Oxanium", sans-serif;
+        background-image: linear-gradient(to right, #ffbb00, #ff0048);
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+        margin-bottom: 25px;
+    }
+
+    .about-text p {
+        font-size: 35px;
+        font-family: "Playball", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-image: linear-gradient(to right, #f6ff00, #ff2600);
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+    }
+
+    .about-achievements {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-achievements .title {
+        font-size: 42px;
+        font-family: "Oxanium", sans-serif;
+        background-image: linear-gradient(to right, #3c0162, #62004b);
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+        margin-bottom: 15px;
+    }
+
+    .details {
+        font-size: 30px;
+        font-family: "Playball", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 15px;
+        color: #fb00ff;
+    }
+
+    .about-card-container {
+        background-image: linear-gradient(to right bottom, black, grey);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.295);
+    }
+
+    .about-card-container .about-card {
+        padding: 5px;
+        color: white;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    .about-card h1 {
+        font-size: 25px;
+        margin-bottom: 10px;
+        text-align: center;
+        cursor: default;
+        transition: 0.3s ease;
+    }
+
+    .about-card i {
+        font-size: 45px;
+        margin: 0 auto;
+        transition: 0.3s;
+    }
+
+    .about-card p {
+        word-wrap: break-word;
+        line-height: 30px;
+        margin-top: 20px;
+        cursor: default;
+        transition: 0.3s;
+    }
+
+    .about-card:first-child:hover h1,
+    .about-card:first-child:hover i,
+    .about-card:first-child:hover p {
+        color: #ff9900;
+    }
+
+    .about-card:nth-child(2):hover h1,
+    .about-card:nth-child(2):hover i,
+    .about-card:nth-child(2):hover p {
+        color: #ff0066;
+    }
+
+    .about-card:nth-child(3):hover h1,
+    .about-card:nth-child(3):hover i,
+    .about-card:nth-child(3):hover p {
+        color: #fbff00;
+    }
+
+    .about-card:nth-child(4):hover h1,
+    .about-card:nth-child(4):hover i,
+    .about-card:nth-child(4):hover p {
+        color: #2bff00;
+    }
+
+    .social-media-section {
+        min-height: 100vh;
+        background-image: linear-gradient(#d00068, #636363);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px 10px;
+    }
+
+    .visite-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    .visite-box h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+        position: relative;
+        background-image: linear-gradient(to right, #0140ff, #13e510);
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+    }
+
+    .visite-box h1 i {
+        position: absolute;
+        right: -80px;
+        font-size: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: linear-gradient(to right bottom, #0140ff, #04ff00);
+        background-size: 100% 100%;
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+        animation: earth linear infinite 2s;
+    }
+
+    .visite-box p {
+        color: #00d0ff;
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .visite-box p a {
+        color: #00ffc8;
+    }
+
+    .visite-box p a:hover {
+        color: white;
+    }
+
+    @keyframes earth {
+        0% {
+            background-size: 100% 100%;
+        }
+
+        25% {
+            background-size: 200% 200%;
+        }
+
+        60% {
+            background-size: 250% 250%;
+        }
+
+        80% {
+            background-size: 300% 300%;
+        }
+
+        100% {
+            background-size: 100% 100%;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: 35px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75px;
+        height: 75px;
+        border-radius: 5px;
+        color: white;
+        font-size: 30px;
+        padding: 15px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.2s;
+        border-radius: 50%;
+        border: solid 3px white;
+        position: relative;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.515);
+    }
+
+    .social-links a:first-child {
+        background-color: red;
+    }
+
+    .social-links a:nth-child(2) {
+        background-color: #0040ff;
+    }
+
+    .social-links a:nth-child(3) {
+        background-image: linear-gradient(to right bottom, #ff0080, #ffdd00);
+    }
+
+    .social-links a:nth-child(4) {
+        background-color: #00c3ff;
+    }
+
+    .social-links a:nth-child(5) {
+        background-color: #0f00af;
+    }
+
+    .social-links a:nth-child(6) {
+        background-color: #566af6;
+    }
+
+    .social-links a:nth-child(7) {
+        background-color: #294dff;
+    }
+
+    .social-links a:nth-child(8) {
+        background-color: #02d0f5;
+    }
+
+    .social-links a:nth-child(9) {
+        background-color: #e600e6;
+    }
+
+    .social-links a:nth-child(10) {
+        background-color: #00ff00;
+    }
+
+    .social-links a:hover {
+        width: 200px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .social-links a:hover::after {
+        content: "";
+        font-size: 24px;
+        font-weight: 500;
+        position: absolute;
+        right: 10px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .social-links a:first-child:hover:after {
+        content: "YouTube";
+        right: 20px;
+    }
+
+    .social-links a:nth-child(2):hover:after {
+        content: "Facebook";
+        right: 10px;
+    }
+
+    .social-links a:nth-child(3):hover:after {
+        content: "Instagram";
+    }
+
+    .social-links a:nth-child(4):hover:after {
+        content: "Twitter";
+        right: 35px;
+    }
+
+    .social-links a:nth-child(5):hover:after {
+        content: "Wordpress";
+    }
+
+    .social-links a:nth-child(6):hover:after {
+        content: "Discord";
+        right: 35px;
+    }
+
+    .social-links a:nth-child(7):hover:after {
+        content: "LinkedIn";
+        right: 35px;
+    }
+
+    .social-links a:nth-child(8):hover:after {
+        content: "Telegram";
+        right: 20px;
+    }
+
+    .social-links a:nth-child(9):hover:after {
+        content: "TikTok";
+        right: 40px;
+    }
+
+    .social-links a:nth-child(10):hover:after {
+        content: "WhatsApp";
+    }
+
+    .contact-section {
+        background-image: linear-gradient(to bottom, #636363, #2d2d2d);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact-section .title {
+        font-family: "Oxanium", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-top: 100px;
+    }
+
+    .contact-section .title h1,
+    .contact-section .title p {
+        background-image: linear-gradient(to right, #cdcdcd, #ababab);
+        -webkit-text-fill-color: transparent;
+        background-color: black;
+        background-clip: text;
+    }
+
+    .contact-section .title h1 {
+        font-size: 60px;
+    }
+
+    .contact-section .title p {
+        font-size: 25px;
+    }
+
+    .contact-form {
+        background-color: #070058;
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        padding: 30px 0;
+        font-family: "Oxanium", sans-serif;
+        border-radius: 60px;
+        border: solid 1px white;
+        box-shadow: 5px 5px 10px #000000a6;
+    }
+
+    .first-form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        justify-content: space-between;
+    }
+
+    .first-form .input-box {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 65px;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .first-form .input-box .input {
+        outline: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 3px;
+        border: none;
+        transition: 0.3s;
+        color: white;
+        background-color: transparent;
+        border: solid 2px white;
+    }
+
+    .first-form .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: white;
+        z-index: 999;
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+
+    .first-form .input-box .input:focus {
+        border-radius: 50px;
+    }
+
+    .first-form .input-box:focus-within label {
+        transform: translateY(-43px) scale(0.9) translateX(7px);
+        padding: 0 6px;
+        border-radius: 90px;
+        background-color: #070058;
+    }
+
+    select {
+        height: 65px;
+        margin-top: 20px;
+        padding: 0 15px;
+        font-size: 18px;
+        border: dotted 2px white;
+        background-color: transparent;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    select option {
+        background-color: #070058;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    .textarea-box {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+    }
+
+    .textarea-box label {
+        color: white;
+        font-size: 19px;
+        margin-top: 35px;
+    }
+
+    .textarea-box textarea {
+        outline: none;
+        resize: none;
+        height: 150px;
+        margin-top: 10px;
+        background-color: transparent;
+        font-size: 19px;
+        color: white;
+        border: solid 2px white;
+        border-radius: 15px;
+        padding: 15px;
+        font-family: "Oxanium", sans-serif;
+    }
+
+    .submit-btn {
+        height: 55px;
+        margin-top: 15px;
+        font-size: 18px;
+        background-color: transparent;
+        border: solid 2px white;
+        color: white;
+        font-family: "Oxanium", sans-serif;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .submit-btn i {
+        transition: 0.3s;
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+    .submit-btn:hover i {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+
+    .contact-section::selection {
+        background-color: grey;
+        color: black;
+    }
+
+    .footer::selection {
+        background-color: white;
+        color: black;
+    }
+
+    .footer {
+        background-color: #000000;
+        width: 100%;
+        padding: 35px;
+        color: white;
+        font-family: "Oxanium", sans-serif;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .link-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    .link-group a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .link-group a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 1056px) {
+        .header .logo span {
+            display: none;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-media-section {
+            padding: 0 40px;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .social-links a:nth-child(1),
+        .social-links a:nth-child(2),
+        .social-links a:nth-child(3),
+        .social-links a:nth-child(4),
+        .social-links a:nth-child(5),
+        .social-links a:nth-child(6),
+        .social-links a:nth-child(7),
+        .social-links a:nth-child(8),
+        .social-links a:nth-child(9),
+        .social-links a:nth-child(10) {
+            width: 75px;
+        }
+
+        .social-links a:nth-child(1):hover:after,
+        .social-links a:nth-child(2):hover:after,
+        .social-links a:nth-child(3):hover:after,
+        .social-links a:nth-child(4):hover:after,
+        .social-links a:nth-child(5):hover:after,
+        .social-links a:nth-child(6):hover:after,
+        .social-links a:nth-child(7):hover:after,
+        .social-links a:nth-child(8):hover:after,
+        .social-links a:nth-child(9):hover:after,
+        .social-links a:nth-child(10):hover:after {
+            right: 0;
+            content: none;
+        }
+
+        .visite-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+    }
+
+    @media (max-width: 890px) {
+        .header {
+            height: 125px;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .logo {
+            display: none;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .navbar .link {
+            position: relative;
+        }
+
+        .navbar .link.link::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 90px;
+            background-color: #ff8400;
+            transition: 0.3s;
+            bottom: 0;
+        }
+
+        .about-card-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .contact-form {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            grid-template-columns: repeat(2, 1fr);
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .header {
+            height: 300px;
+        }
+
+        .navbar {
+            flex-direction: column;
+        }
+
+        .visite-box {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-links {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visite-box h1 i {
+            font-size: 40px;
+            right: -50px;
+        }
+
+        .contact-form {
+            width: 100%;
+        }
+
+        .contact-form input {
+            max-width: 95%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-box {
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .link {
+            color: #fff;
+            text-decoration: none;
+            padding: 7px 15px;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .navbar .link::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ff8400;
+            transform: translateY(55px);
+            border-radius: 5px;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .navbar .link:hover::after {
+            transform: translateY(0);
+        }
+
+        .navbar .link:hover {
+            color: black;
+        }
+
+        .navbar .active {
+            color: white;
+            padding: 9px 15px;
+            border-radius: 90px 90px 90px 0;
+            border: 2px solid #ff8400;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar .active::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ff8400;
+            transform: translateX(120px);
+            border-radius: 90px 90px 0 90px;
+            z-index: -1;
+            transition: 0.3s;
+        }
+
+        .navbar .active:hover::after {
+            transform: translateX(0);
+        }
+
+        .navbar .active:hover {
+            color: black;
+            border-radius: 90px 90px 0 90px;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon i {
+            font-size: 30px;
+            color: #ff8400;
+        }
+
+        @media (max-width: 890px) {
+            .header {
+                flex-direction: column;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .navbar.show {
+                display: flex;
+            }
+        }
+
+        /* ---------- Simple Animations ---------- */
+        @keyframes icon {
+            from {
+                transform: rotate(180deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    }
+</style>
+
 <body>
-  <div class="content">
-  <h1 class="the-title">Your privacy is important to us</h1>
+    <header class="header">
+        <div class="logo">
+            <a href="#"><i class="fa-solid fa-basketball"></i><span>basketball</span></a>
+        </div>
+        <div class="search-box">
+            <form>
+                <input type="text" class="search-input" placeholder="Search Your Hobbies..." required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="#skills" class="link">Skills</a>
+            <a href="#about" class="link">About us</a>
+            <a href="#socialmedia" class="link">Social Media</a>
+            <a href="#contact" class="active">Contact us</a>
+        </nav>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+    <section class="skills-section" id="skills">
+        <div class="text-box">
+            <h1>our
+                <span class="span-skills">skills</span>
+                <i class="fa-solid fa-skull-crossbones"></i>
+            </h1>
+            <p>
+                At the <span class="active-span">fitness</span> gym, two athletic staff members demonstrate agility,
+                <span class="active-span">strength</span>, patience, coaching insight,
+                motivational <span class="active-span">energy</span>, precise technique, injury awareness, <span
+                    class="active-span">creative</span> programming, rhythmic pacing,
+                friendly communication, strategic planning, endurance <span class="active-span">training</span>, balance
+                mastery, flexibility guidance,
+                nutrition knowledge, <span class="active-span">teamwork</span> spirit, problem <span
+                    class="active-span">solving</span>, confident leadership, adaptive <span
+                    class="active-span">learning</span>,
+                and continuous improvement mindset daily together.
+            </p>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <i class="fa-solid fa-dumbbell"></i>
+                <h2>Strength Training</h2>
+                <p>
+                    Personalized strength programs designed to improve muscle <span class="animated-span">power</span>,
+                    body balance, and overall <span class="animated-span">physical</span>
+                    performance while maintaining <span class="animated-span">safe</span> and effective <span
+                        class="animated-span">workout</span> techniques.
+                </p>
+            </div>
 
-  <p class="text">
-Our website uses cookies to enhance your browsing experience and help us remember your preferences.
-By clicking "Accept All Cookies" you consent to the use of all cookies.
-You can manage your preferences or opt-out by clicking 
-"Manage cookies." <a href="#">Learn more.</a>
-  </p>
+            <div class="card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h2>Cardio Fitness</h2>
+                <p>
+                    Dynamic cardio sessions that enhance endurance, boost heart <span
+                        class="animated-span">health</span>,
+                    and help members stay energetic <span class="animated-span">through</span> structured and enjoyable
+                    exercises.
+                </p>
+            </div>
 
-  <!-- NEW BUTTON CONTAINER -->
-  <div class="btn-box">
-    <button class="transparent-btn">Manage cookies</button>
-    <a class="green-btn" href="#">Accept All Cookies</a>
-  </div>
-</div>
+            <div class="card">
+                <i class="fa-solid fa-apple-whole"></i>
+                <h2>Nutrition Guidance</h2>
+                <p>
+                    Practical nutrition <span class="animated-span">advice</span> focused on <span
+                        class="animated-span">healthy</span> eating habits,
+                    recovery support, and sustainable <span class="animated-span">lifestyle</span> changes for long-term
+                    fitness <span class="animated-span">success</span>.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-user-check"></i>
+                <h2>Personal Coaching</h2>
+                <p>
+                    One-on-one coaching sessions providing <span class="animated-span">motivation</span>, progress
+                    tracking,
+                    and customized <span class="animated-span">workout</span> plans tailored to individual fitness <span
+                        class="animated-span"> goals</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="about">
+        <div class="about-text">
+            <h1>About us</h1>
+            <p>
+                My gym is a place full of <span class="about-text-span">energy</span>, movement, and <span
+                    class="about-text-span">motivation</span>.
+                People come here to build strength, improve their <span class="about-text-span">health</span>,
+                and <span class="about-text-span">challenge</span> themselves every day. The atmosphere is <span
+                    class="about-text-span">supportive</span> and focused,
+                with weights, machines, and open space for <span class="about-text-span">training</span>. Whether
+                lifting, stretching,
+                or doing cardio, everyone <span class="about-text-span">works</span> toward becoming <span
+                    class="about-text-span">stronger</span> and healthier.
+            </p>
+        </div>
+        <div class="about-card-container">
+            <div class="about-card">
+                <h1>Proud community</h1>
+                <i class="fa-brands fa-ello"></i>
+                <p>
+                    Our proud community is built on support, motivation, and shared goals.
+                    Together we inspire each other to grow stronger, healthier,
+                    and more confident every day.
+                </p>
+            </div>
+            <div class="about-card">
+                <h1><span class="plus">+</span>15M on Social Media</h1>
+                <i class="fa-brands fa-instagram"></i>
+                <p>
+                    We are proud to have 15 million followers on social media supporting
+                    and inspiring our journey every day. Their support motivates us to keep
+                    growing and sharing our passion for fitness.
+                </p>
+            </div>
+            <div class="about-card">
+                <h1><span class="number">500</span> successful members</h1>
+                <i class="fa-solid fa-people-group"></i>
+                <p>
+                    We are proud to have 500 successful members who achieved their fitness goals
+                    with dedication and hard work. Their transformations and progress inspire our
+                    entire community to keep pushing forward.
+                </p>
+            </div>
+            <div class="about-card">
+                <h1>Great Result</h1>
+                <i class="fa-regular fa-circle-check"></i>
+                <p>
+                    Our great results come from dedication, hard work, and a strong community
+                    that pushes each other to improve every day. We are proud of the progress
+                    and success our members achieve.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="social-media-section" id="socialmedia">
+        <div class="visite-box">
+            <h1>Visit our pages<i class="fa-solid fa-earth-americas"></i></h1>
+            <p>Visit our social media pages for more information <a href="#">Learn More</a></p>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-wordpress"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="title">
+            <h1>Contact us</h1>
+            <p>Send us a Message</p>
+        </div>
+        <form class="contact-form">
+            <div class="first-form">
+                <div class="input-box">
+                    <label for="user">User Name</label>
+                    <input class="input" type="text" id="user" required name="username" autofocus>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input class="input" type="email" id="email" required name="email">
+                </div>
+                <select name="country">
+                    <option value="" hidden selected>Select Your Country</option>
+                    <option value="us">United states</option>
+                    <option value="france">France</option>
+                    <option value="canada">canada</option>
+                    <option value="italy">Italy</option>
+                    <option value="brasil">Brazil</option>
+                    <option value="morocco">Morocco</option>
+                    <option value="spain">Spain</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="jordan">Jordan</option>
+                    <option value="ksa">Saudi arabia</option>
+                </select>
+            </div>
+            <div class="last-form">
+                <div class="textarea-box">
+                    <label for="textarea">Enter your Message</label>
+                    <textarea name="message" id="textarea" required></textarea>
+                    <button type="submit" class="submit-btn">Submit <i class="fa-solid fa-share"></i></button>
+                </div>
+            </div>
+        </form>
+        <footer class="footer">
+            <div class="link-group">
+                <a href="#skills">Home</a>
+                <a href="#about">About us</a>
+                <a href="#">Our services</a>
+                <a href="#contact">Contact us</a>
+                <a href="#">Blog</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Services</a>
+                <a href="#">Help center</a>
+                <a href="#">Support</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="link-group">
+                <a href="#">Careers</a>
+                <a href="#">Our Team</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Pricing</a>
+                <a href="#">Resources</a>
+                <a href="#">Documentation</a>
+                <a href="#">Tutorials</a>
+                <a href="#">Community</a>
+                <a href="#">Developers</a>
+            </div>
+            <div class="link-group">
+                <a href="#">News</a>
+                <a href="#">Events</a>
+                <a href="#">Partners</a>
+                <a href="#">Affiliates</a>
+                <a href="#">Press</a>
+                <a href="#">Sitemap</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Security</a>
+                <a href="#">Cookies Policy</a>
+                <a href="#">Newsletter</a>
+            </div>
+            <div class="link-group">
+                <a href="#">Download</a>
+                <a href="#">Updates</a>
+                <a href="#">Feedback</a>
+                <a href="#">Report Issue</a>
+                <a href="#">User Guide</a>
+                <a href="#">API</a>
+                <a href="#">Integrations</a>
+                <a href="#">Roadmap</a>
+                <a href="#">Status</a>
+                <a href="#">Contact Support</a>
+            </div>
+        </footer>
+    </section>
+    <script>
+        // Toggle navbar on mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
 </body>
+
 </html>
