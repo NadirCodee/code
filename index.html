@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>navbar-hover-effect</title>
+    <title>Log in page | HTML & css</title>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Project</a>
-        <a href="#">Settings</a>
-        <a href="#">Payment</a>
-        <span class="slider"></span>
-    </nav>
+    <div class="container">
+        <button class="close-btn"><i class="fa-solid fa-x"></i></button>
+        <h1 class="title">Log in or sign up</h1>
+        <p>
+            You'll get smarter responses and can upload files, images, and more.
+        </p>
+        <div class="signup-types">
+            <button><i class="fa-brands fa-google"></i>Continue with Google</button>
+            <button><i class="fa-brands fa-apple"></i>Continue with Apple</button>
+            <button><i class="fa-solid fa-phone"></i>Continue with phone</button>
+        </div>
+        <hr>
+        <h3 class="or">OR</h3>
+        <form>
+            <input type="email" name="email" required placeholder="Email address">
+            <button type="submit">Continue</button>
+        </form>
+    </div>
 </body>
+
 </html>
