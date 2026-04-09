@@ -1,141 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap");
 * {
+  font-family: "Geo", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  color: #fff;
-  background-image: url(https://wallpapers.com/images/hd/chatgpt-o2m90tzr2rbsk430.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
 }
-::selection {
-  background-color: #3d5c7a;
-  color: #fff;
+button {
+  position: relative;
+  font-size: 35px;
+  padding: 11px 35px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: transparent;
+  border: solid 4px #00ff00;
+  cursor: pointer;
+  color: #00ff00;
+  transition: 0.4s;
+}
+button::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background-color: black;
+  top: -8px;
+  left: 24px;
+  transition: 0.4s;
+}
+button::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background-color: black;
+  right: 24px;
+  bottom: -8px;
+  transition: 0.4s;
+}
+button:hover::after {
+  transform: translateX(-110px);
+}
+button:hover::before {
+  transform: translateX(110px);
 }
 .container {
-  background-color: #212121;
-  padding: 15px 23px;
-  border-radius: 17px;
-  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.7);
-  position: relative;
-  max-width: 450px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  transition: 0.3s;
 }
-.close-btn {
-  color: #fff;
-  font-size: 17px;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-color: transparent;
-  transition: 0.1s;
-  margin-left: auto;
-  border: none;
-  border-radius: 50%;
+.box:nth-child(2) button {
+  border: solid 4px red;
+  color: red;
 }
-.close-btn:hover {
-  background-color: hsl(0, 0%, 30%);
+.box:nth-child(3) button {
+  border: solid 4px #ff6f00;
+  color: #ff6f00;
 }
-.title {
-  font-weight: 400;
-  font-size: 35px;
-  text-align: center;
+.box:nth-child(4) button {
+  border: solid 4px #00a2ff;
+  color: #00a2ff;
 }
-p {
-  font-size: 18px;
-  text-align: center;
-  margin-top: 24px;
-}
-.signup-types {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px 0;
-  gap: 17px;
-}
-.signup-types button {
-  color: #fff;
-  background-color: #2f2f2f;
-  border: solid 1.2px hsl(0, 0%, 50%);
-  width: 100%;
-  text-align: center;
-  padding: 17px 0;
-  font-size: 19px;
-  transition: 0.1s;
-  cursor: pointer;
-  border-radius: 50px;
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-.signup-types button:hover {
-  background-color: hsl(0, 0%, 30%);
-}
-hr {
-  border: none;
-  height: 1px;
-  background-color: hsl(0, 0%, 40%);
-}
-.or {
-  color: hsl(0, 0%, 60%);
-  background-color: #212121;
-  display: flex;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  align-items: center;
-  margin: 0 auto;
-  transform: translateY(-16px);
-  font-size: 15px;
-  padding: 0 30px;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-form input {
-  padding: 19px 13px;
-  background-color: #2f2f2f;
-  font-size: 18px;
-  outline: none;
-  border-radius: 50px;
-  color: hsl(0, 0%, 80%);
-  border: solid 2px transparent;
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
-}
-form input::placeholder {
-  color: hsl(0, 0%, 60%);
-}
-form input:focus {
-  border: solid 2px hsl(0, 0%, 80%);
-}
-form button {
-  padding: 17px 0;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 60px;
-  cursor: pointer;
-  transition: 0.2s;
-  background-color: hsl(0, 0%, 95%);
-  border: none;
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
-}
-form button:hover {
-  background-color: hsl(0, 0%, 80%);
+@media (max-width: 600px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
