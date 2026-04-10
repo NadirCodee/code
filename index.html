@@ -5,23 +5,56 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberpunk Button UI</title>
+    <title>Modern Registration Form UI</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="box">
-            <button>START</button>
-        </div>
-        <div class="box">
-            <button>START</button>
-        </div>
-        <div class="box">
-            <button>START</button>
-        </div>
-        <div class="box">
-            <button>START</button>
-        </div>
+        <h1 class="title">Registration</h1>
+        <form action="#">
+            <div class="input-container">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" placeholder="Enter your name" id="fullname" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter your username" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter your email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" placeholder="Enter your number" id="phone" name="phone_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter your password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" placeholder="Confirm your password" id="confirm-password" name="confirm_password" required>
+                </div>
+            </div>
+            <h2 class="gender-title">Gender</h2>
+            <div class="radio-container">
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="refuse" name="gender" value="refuse_to_say" required>
+                    <label for="refuse">Prefer not to say</label>
+                </div>
+            </div>
+            <button class="register-btn" type="submit">Register</button>
+        </form>
     </div>
 </body>
 
