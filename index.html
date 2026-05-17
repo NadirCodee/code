@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Icons Hover Effects</title>
+    <title>ChatGPT sign up page</title>
 </head>
+
 <body>
-    <div class="social-box">
-        <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="github"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+    <div class="form">
+        <div class="left-btn">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+        <div class="logo">
+            <i class="fa-brands fa-openai"></i>
+            <h1>Log in or sign up</h1>
+            <p>You'll get smarter responses and can upload files, images and more.</p>
+        </div>
+        <form class="email-form">
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" required name="email" id="email">
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+        <div class="middle-line">OR</div>
+        <div class="continue-with-method">
+            <a href="#"><i class="fa-brands fa-google"></i> Continue with Google</a>
+            <a href="#"><i class="fa-solid fa-phone"></i> Continue with phone</a>
+        </div>
+        <ul>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
     </div>
 </body>
+
 </html>
