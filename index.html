@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in page</title>
 </head>
+
 <body>
-  <div class="container">
-    <h1 class="title">Sign up</h1>
-    <form action="">
-      <p class="intro">Let's get started with your 30 days trial</p>
-      <div class="input-box">
-        <input type="email" placeholder="Email">
-      </div>
-      <div class="input-box">
-        <input type="password" placeholder="Password">
-        <button class="eye"><i class="fa-regular fa-eye-slash"></i></button>
-      </div>
-      <a href="#" class="link">Recovery Password</a>
-      <button type="submit" class="submit-btn">Sign up</button>
-    </form>
-    <p class="divider">Or continue with</p>
-    <div class="social-icons">
-      <a href="#" style="color: #ff6a00;"><i class="fa-brands fa-google"></i></a>
-      <a href="#" style="color: #000;"><i class="fa-brands fa-apple"></i></a>
-      <a href="#" style="color: #0077ff;"><i class="fa-brands fa-facebook"></i></a>
+    <div class="container">
+        <div class="logo">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        <h1 class="title">Welcome Back</h1>
+        <p class="intro">Sign in to continue to your account</p>
+        <form action="">
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required name="email">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required name="password">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <a href="#" class="link">Forgot password?</a>
+            <button class="submit-btn" type="submit">Sign In</button>
+        </form>
+        <div class="divider">or</div>
+        <a href="#" class="google-btn">
+            <img src="https://cdn-teams-slug.flaticon.com/google.jpg" width="40" alt="continue with google">
+            Continue with Google
+        </a>
+        <p class="signup-text">
+            Don't have an account? <a href="#">Sign up</a>
+        </p>
     </div>
-  </div>
+    <div class="circle left-top"></div>
+    <div class="circle right-bottom"></div>
 </body>
+
 </html>
